@@ -1,0 +1,84 @@
+﻿@model Shop.ViewModels.ProductList
+
+@{
+    ViewBag.Title = "AddNewProduct";
+}
+
+<h2>AddNewProduct</h2>
+
+<section class="checkout-section ptb-60">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-8 col-lg-offset-3 col-sm-offset-2">
+                    <div class="main-form full">
+                        <div class="row">
+                            <div class="col-xs-12 mb-20">
+                                <div class="heading-part heading-bg">
+                                    <h2 class="heading">Create your account</h2>
+                                </div>
+                            </div>
+                            @using (Html.BeginForm("AddNewProduct", "Home", FormMethod.Post,new { enctype = "multipart/form-data" }))
+                            {
+                                <div class="col-xs-12">
+                                    <div class="input-box">
+                                        <label for="f-name">Category Name</label>
+                                        @Html.DropDownListFor(model => model.CategoryID, ViewBag.category as IEnumerable<SelectListItem>)
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="input-box">
+                                        <label for="l-name">Prodct Name</label>
+                                        @Html.TextBoxFor(model => model.ProdctName, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                            
+                                <div class="col-xs-12">
+                                    <div class="input-box">
+                                        <label for="login-email">Product Model</label>
+                                        @Html.TextBoxFor(model => model.model, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="input-box">
+                                        <label for="login-pass">Price</label>
+                                        @Html.TextBoxFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                
+                                <div class="col-xs-12">
+                                    <div class="input-box">
+                                        <label for="re-enter-pass">Product Quantity</label>
+                                        @Html.TextBoxFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="input-box">
+                                        <label for="re-enter-pass">Product Image</label>
+                                        <input type="file" name="Image" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="input-box">
+                                        <label for="re-enter-pass">Product Features</label>
+                                        @Html.TextAreaFor(model => model.Feature, new { htmlAttributes = new { @class = "form-control" }, rows = "5" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="input-box">
+                                        <label for="re-enter-pass">Product Discriptions</label>
+                                        @Html.TextAreaFor(model => model.detail, new { htmlAttributes = new { @class = "form-control" },rows = "5" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button name="submit" type="submit" class="btn-color center-block">Submit</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

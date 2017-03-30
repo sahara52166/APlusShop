@@ -1,0 +1,525 @@
+﻿@model IEnumerable<Shop.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Index</h2>
+<div>
+<a href="@Url.Action("AddNewProduct","Home")">Add New product</a></div>
+
+
+<section>
+    <div class="row">
+        <div class="col-md-9 right-side float-none-sm">
+            <!-- BANNER STRAT -->
+            <div class="banner">
+                <div class="main-banner">
+                    <div class="banner-1">
+                        <img src="~/images/banner1.jpg" alt="Honour">
+                        <div class="banner-detail">
+                            <div class="row">
+                                <div class="col-sm-7 col-xs-8">
+                                    <div class="banner-detail-inner">
+                                        <span class="slogan">Special Offer</span>
+                                        <h1 class="banner-title">
+                                            iPad Up To <br>
+                                            80% Off
+                                        </h1>
+                                        <span class="offer">Find the Perfect iPad </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5 col-xs-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-2">
+                        <img src="~/images/banner2.jpg" alt="Honour">
+                        <div class="banner-detail">
+                            <div class="col-sm-5 col-xs-4"></div>
+                            <div class="col-sm-7 col-xs-8">
+                                <div class="banner-detail-inner">
+                                    <h1 class="banner-title">
+                                        PC & Laptop <br>
+                                        Accessories
+                                    </h1>
+                                    <span class="offer">Enjoy Delightful Prices</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-3">
+                        <img src="~/images/banner3.jpg" alt="Honour">
+                        <div class="banner-detail">
+                            <div class="col-sm-7 col-xs-8">
+                                <div class="banner-detail-inner">
+                                    <span class="slogan">New product</span>
+                                    <h1 class="banner-title">
+                                        Megasound <br>
+                                        Hi-Fi System
+                                    </h1>
+                                    <span class="offer">only 5 Day For Just $66</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-xs-4"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="texture-bottom"></div> -->
+            </div>
+            <!-- BANNER END -->
+            <!-- CONTAIN START -->
+            <section>
+                <div class="sub-banner-block center-xs hidden-xs">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="sub-banner sub-banner1">
+                                <a>
+                                    <img src="~/images/sub-banner1.jpg" alt="Honour">
+                                    <div class="sub-banner-detail">
+                                        <div class="sub-banner-title">
+                                            3D <br>
+                                            Mirror <br>
+                                            screen TV
+                                        </div>
+                                        <span></span>
+                                        <div class="sub-banner-subtitle">Up to 20% off</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="sub-banner sub-banner2">
+                                <a>
+                                    <img src="~/images/sub-banner2.jpg" alt="Honour">
+                                    <div class="sub-banner-detail">
+                                        <div class="sub-banner-title">
+                                            Smart <br>
+                                            Hand <br>
+                                            Watch
+                                        </div>
+                                        <span></span>
+                                        <div class="sub-banner-subtitle">New Hot Deal</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="sub-banner sub-banner3">
+                                <a>
+                                    <img src="~/images/sub-banner3.jpg" alt="Honour">
+                                    <div class="sub-banner-detail">
+                                        <div class="sub-banner-title">Laptops</div>
+                                        <span></span>
+                                        <div class="sub-banner-subtitle">
+                                            Buy Laptops <br>
+                                            Online
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--  New Products Slider Block Start  -->
+            <section class="ptb-60">
+                <div class="product-slider">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="heading-part mb-30">
+                                <h2 class="main_title">New Products</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="product-slider-main position-r">
+                            <div class="owl-carousel pro_cat_slider">
+                                @foreach (var item in Model)
+                                {
+
+                                    <div class="product-image col-xs-11">
+                                        <a href="@Url.Action("ProductView", "Home", new { ProID = item.ProductID})"> <img src="~/images/@item.Image" alt="" style="height:250px"> </a>
+                                        
+
+                                        <div class="product-item-details">
+                                            <div class="rating-summary-block">
+                                                <div title="53%" class="rating-result"> <span></span> </div>
+                                                <div class="product-item-name"> <a href="@Url.Action("ProductView", "Home", new { ProID = item.ProductID})">Defyant Reversible Dot Shorts</a> </div>
+                                                <div class="product-item-name"> <a href="product-page.html">@item.category.CategoryName</a> </div>
+                                                <div class="price-box"> <span class="price">$@item.Price</span> <del class="price old-price">$100.00</del> </div>
+                                          </div>
+                                            </div>
+                                              </div>
+
+
+
+                                            }
+                                        </div>
+                                    </div>
+                        </div>
+                        </div>
+</section>
+            <!--  New Products Slider Block End  -->
+            <!--  Site Services Features Block Start  -->
+            <section>
+                <div class="ser-feature-block center-sm">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="feature-box feature1">
+                                <div class="ser-title">Free Shipping</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box feature2">
+                                <div class="ser-title">Special Gift</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-box feature3">
+                                <div class="ser-title">Money Back</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--  Site Services Features Block End  -->
+            <!--  Featured Products Slider Block Start  -->
+            <section class="ptb-60">
+                <div class="product-slider">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="heading-part mb-30">
+                                <h2 class="main_title">Featured Products</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="product-slider-main position-r">
+                            <div class="owl-carousel pro_cat_slider">
+                                <div class="item">
+                                    <div class="product-item">
+                                        <div class="sale-label"><span>Sale</span></div>
+                                        <div class="product-image">
+                                            <a href="product-page.html"> <img src="~/images/1.jpg" alt=""> </a>
+                                            <div class="product-detail-inner">
+                                                <div class="detail-inner-left left-side">
+                                                    <ul>
+                                                        <li class="pro-cart-icon">
+                                                            <form>
+                                                                <button title="Add to Cart"></button>
+                                                            </form>
+                                                        </li>
+                                                        <li class="pro-wishlist-icon"><a href="#"></a></li>
+                                                        <li class="pro-compare-icon"><a href="#"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item-details">
+                                            <div class="rating-summary-block">
+                                                <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                                            </div>
+                                            <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                                            <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <a href="product-page.html"> <img src="~/images/2.jpg" alt=""> </a>
+                                            <div class="product-detail-inner">
+                                                <div class="detail-inner-left left-side">
+                                                    <ul>
+                                                        <li class="pro-cart-icon">
+                                                            <form>
+                                                                <button title="Add to Cart"></button>
+                                                            </form>
+                                                        </li>
+                                                        <li class="pro-wishlist-icon"><a href="#"></a></li>
+                                                        <li class="pro-compare-icon"><a href="#"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item-details">
+                                            <div class="rating-summary-block">
+                                                <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                                            </div>
+                                            <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                                            <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <a href="product-page.html"> <img src="~/images/3.jpg" alt=""> </a>
+                                            <div class="product-detail-inner">
+                                                <div class="detail-inner-left left-side">
+                                                    <ul>
+                                                        <li class="pro-cart-icon">
+                                                            <form>
+                                                                <button title="Add to Cart"></button>
+                                                            </form>
+                                                        </li>
+                                                        <li class="pro-wishlist-icon"><a href="#"></a></li>
+                                                        <li class="pro-compare-icon"><a href="#"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item-details">
+                                            <div class="rating-summary-block">
+                                                <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                                            </div>
+                                            <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                                            <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <a href="product-page.html"> <img src="~/images/4.jpg" alt=""> </a>
+                                            <div class="product-detail-inner">
+                                                <div class="detail-inner-left left-side">
+                                                    <ul>
+                                                        <li class="pro-cart-icon">
+                                                            <form>
+                                                                <button title="Add to Cart"></button>
+                                                            </form>
+                                                        </li>
+                                                        <li class="pro-wishlist-icon"><a href="#"></a></li>
+                                                        <li class="pro-compare-icon"><a href="#"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item-details">
+                                            <div class="rating-summary-block">
+                                                <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                                            </div>
+                                            <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                                            <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <a href="product-page.html"> <img src="~/images/5.jpg" alt=""> </a>
+                                            <div class="product-detail-inner">
+                                                <div class="detail-inner-left left-side">
+                                                    <ul>
+                                                        <li class="pro-cart-icon">
+                                                            <form>
+                                                                <button title="Add to Cart"></button>
+                                                            </form>
+                                                        </li>
+                                                        <li class="pro-wishlist-icon"><a href="#"></a></li>
+                                                        <li class="pro-compare-icon"><a href="#"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item-details">
+                                            <div class="rating-summary-block">
+                                                <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                                            </div>
+                                            <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                                            <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <a href="product-page.html"> <img src="~/images/3.jpg" alt=""> </a>
+                                            <div class="product-detail-inner">
+                                                <div class="detail-inner-left left-side">
+                                                    <ul>
+                                                        <li class="pro-cart-icon">
+                                                            <form>
+                                                                <button title="Add to Cart"></button>
+                                                            </form>
+                                                        </li>
+                                                        <li class="pro-wishlist-icon"><a href="#"></a></li>
+                                                        <li class="pro-compare-icon"><a href="#"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-item-details">
+                                            <div class="rating-summary-block">
+                                                <div title="53%" class="rating-result"> <span style="width:53%"></span> </div>
+                                            </div>
+                                            <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
+                                            <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--  Featured Products Slider Block End  -->
+
+            <section class="pb-60">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="heading-part mb-30">
+                            <h2 class="main_title">Latest News</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="news" class="owl-carousel">
+                        <div class="item">
+                            <div class="blog-item">
+                                <div class="blog-media"> <img src="~/images/blog_img1.jpg" alt="Honour"> <a href="single-blog.html" title="Click For Read More" class="read">&nbsp;</a> </div>
+                                <div class="blog-detail">
+                                    <span>01 jan 2017</span>
+                                    <h3><a href="single-blog.html">Combined with a handful of model</a></h3>
+                                    <hr>
+                                    <div class="post-info">
+                                        <ul>
+                                            <li><span>By</span><a href="#"> cormon jons</a></li>
+                                            <li><a href="#">(5) comments</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="blog-item">
+                                <div class="blog-media"> <img src="~/images/blog_img2.jpg" alt="Honour"> <a href="single-blog.html" title="Click For Read More" class="read">&nbsp;</a> </div>
+                                <div class="blog-detail">
+                                    <span>02 jan 2017</span>
+                                    <h3><a href="single-blog.html">Combined with a handful of model</a></h3>
+                                    <hr>
+                                    <div class="post-info">
+                                        <ul>
+                                            <li><span>By</span><a href="#"> cormon jons</a></li>
+                                            <li><a href="#">(5) comments</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="blog-item">
+                                <div class="blog-media"> <img src="~/images/blog_img3.jpg" alt="Honour"> <a href="single-blog.html" title="Click For Read More" class="read">&nbsp;</a> </div>
+                                <div class="blog-detail">
+                                    <span>03 jan 2017</span>
+                                    <h3><a href="single-blog.html">Combined with a handful of model</a></h3>
+                                    <hr>
+                                    <div class="post-info">
+                                        <ul>
+                                            <li><span>By</span><a href="#"> cormon jons</a></li>
+                                            <li><a href="#">(5) comments</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Brand logo block Start  -->
+            <section>
+                <div class="brand">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="brand-logo" class="owl-carousel align_center">
+                                <div class="item"><a href="#"><img src="~/images/brand1.jpg" alt="#"></a></div>
+                                <div class="item"><a href="#"><img src="~/images/brand2.jpg" alt="#"></a></div>
+                                <div class="item"><a href="#"><img src="~/images/brand3.jpg" alt="#"></a></div>
+                                <div class="item"><a href="#"><img src="~/images/brand4.jpg" alt="#"></a></div>
+                                <div class="item"><a href="#"><img src="~/images/brand5.jpg" alt="#"></a></div>
+                                <div class="item"><a href="#"><img src="~/images/brand6.jpg" alt="#"></a></div>
+                                <div class="item"><a href="#"><img src="~/images/brand7.jpg" alt="#"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Brand logo block End  -->
+        </div>
+        <div class="col-md-3 mb-xs-30 left-side float-none-sm">
+            <div class="sidebar-block">
+                <div class="sidebar-box mb-40 visible-md visible-lg"> <a> <img src="~/images/left_banner1.jpg" alt="Honour"> </a> </div>
+                <div class="sidebar-box listing-box mb-40">
+                    <span class="opener plus"></span>
+                    <div class="sidebar-title">
+                        <h3>Categories</h3>
+                    </div>
+                    <div class="sidebar-contant">
+                        <ul>
+                            <li><a>Clothing <span>(21)</span></a></li>
+                            <li><a>Shoes <span>(05)</span></a></li>
+                            <li><a>Jewellery <span>(10)</span></a></li>
+                            <li><a>Home & Furniture <span>(12)</span></a></li>
+                            <li><a>Bags <span>(18)</span></a></li>
+                            <li><a>Accessories <span>(70)</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar-box mb-40">
+                    <span class="opener plus"></span>
+                    <div class="sidebar-title">
+                        <h3>Shop by</h3>
+                    </div>
+                    <div class="sidebar-contant">
+                        <div class="price-range mb-30">
+                            <div class="inner-title">Price range</div>
+                            <input class="price-txt" type="text" id="amount">
+                            <div id="slider-range"></div>
+                        </div>
+                        <div class="mb-20">
+                            <div class="inner-title">Category</div>
+                            <ul>
+                                <li><a>Bags 2 <span>(0)</span></a></li>
+                                <li><a>Clothing x2 2 <span>(05)</span></a></li>
+                                <li><a>Lingerie 2 <span>(10)</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="mb-20">
+                            <div class="inner-title">Color</div>
+                            <ul>
+                                <li><a>Black <span>(0)</span></a></li>
+                                <li><a>Blue <span>(05)</span></a></li>
+                                <li><a>Brown <span>(10)</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="mb-20">
+                            <div class="inner-title">Manufacture</div>
+                            <ul>
+                                <li><a>Augue congue <span>(0)</span></a></li>
+                                <li><a>Eu magna <span>(05)</span></a></li>
+                                <li><a>Ipsum sit <span>(10)</span></a></li>
+                            </ul>
+                        </div>
+                        <a class="btn btn-color">Refine</a>
+                    </div>
+                </div>
+                <div class="sidebar-box sidebar-item mb-40">
+                    <span class="opener plus"></span>
+                    <div class="sidebar-title">
+                        <h3>Best Seller</h3>
+                    </div>
+                   
+                </div>
+                <div class="sidebar-box mb-40 visible-md visible-lg"> <a> <img src="~/images/left-banner.jpg" alt="Honour"> </a> </div>
+              
+            </div>
+        </div>
+    </div>
+   
+</section>
+
+
